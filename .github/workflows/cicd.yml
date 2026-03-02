@@ -1,0 +1,28 @@
+name: CICD 
+
+#manually click delever 
+on:
+  workflow_dispatch: 
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code 
+        run: echo "code clone from GitHub"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build a docker file
+        run: echo "build a docker image"
+  test:
+    runs-on: test a code
+    steps:
+      - name: test hoga
+        run: echo "testing ho rha hi "
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deployment
+        run: echo "deploying"
+      
