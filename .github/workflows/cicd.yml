@@ -15,12 +15,14 @@ jobs:
       - name: build a docker file
         run: echo "build a docker image"
   test:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: test hoga
         run: echo "testing ho rha hi "
 
   deploy:
+    needs: [test,build]
     runs-on: ubuntu-latest
     steps:
       - name: deployment
