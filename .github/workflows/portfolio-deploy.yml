@@ -1,0 +1,24 @@
+name: Portfolio
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+permissions: 
+    pages: write
+    id-token: write
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checout stage
+              uses: actions/checkout@v4 
+
+            - name: setup github pages
+              uses: actions/configure-pages@v4
+            
+            - name: upload stage file
+              uses: actions/upload-pages-artifcat@v4
+            
+            - name: depoy 
+              uses: actions/deploy-pages@v4
