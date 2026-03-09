@@ -14,168 +14,263 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Poppins;
 }
 
 body{
 background:#0f172a;
-color:#e2e8f0;
-line-height:1.6;
-}
-
-.container{
-width:90%;
-max-width:1100px;
-margin:auto;
-}
-
-header{
-padding:60px 0;
-text-align:center;
-}
-
-header h1{
-font-size:40px;
 color:white;
 }
 
-header h2{
-font-weight:400;
-color:#38bdf8;
-margin-top:10px;
+/* HERO */
+
+.hero{
+
+background:linear-gradient(120deg,#1e3a8a,#2563eb,#06b6d4);
+
+padding:120px 20px;
+
+text-align:center;
+
 }
 
-.contact{
-margin-top:20px;
-font-size:14px;
-color:#cbd5f5;
+.hero h1{
+
+font-size:50px;
+
+font-weight:700;
+
 }
 
-.contact a{
-color:#38bdf8;
+.hero p{
+
+margin-top:15px;
+
+font-size:18px;
+
+opacity:.9;
+
+}
+
+.hero-buttons{
+
+margin-top:25px;
+
+}
+
+.btn{
+
+background:white;
+
+color:#1e3a8a;
+
+padding:10px 18px;
+
+border-radius:8px;
+
+margin:5px;
+
+display:inline-block;
+
 text-decoration:none;
-margin:0 10px;
+
+font-weight:500;
+
+transition:.3s;
+
 }
 
-section{
-padding:50px 0;
+.btn:hover{
+
+transform:scale(1.05);
+
+}
+
+/* SECTION */
+
+.section{
+
+max-width:1100px;
+
+margin:auto;
+
+padding:70px 20px;
+
 }
 
 .section-title{
-font-size:28px;
-margin-bottom:25px;
-color:white;
-border-left:5px solid #38bdf8;
-padding-left:12px;
+
+font-size:32px;
+
+margin-bottom:30px;
+
+color:#38bdf8;
+
 }
 
-.about{
-background:#111827;
-padding:30px;
-border-radius:10px;
+/* GLASS CARD */
+
+.card{
+
+background:rgba(255,255,255,0.05);
+
+backdrop-filter:blur(10px);
+
+border-radius:15px;
+
+padding:25px;
+
+margin-bottom:20px;
+
+transition:.3s;
+
 }
+
+.card:hover{
+
+transform:translateY(-6px);
+
+background:rgba(255,255,255,0.08);
+
+}
+
+/* SKILLS */
 
 .skills{
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
+
+gap:20px;
+
 }
 
-.skill{
+.skill-bar{
+
+margin-top:10px;
+
+height:8px;
+
 background:#1e293b;
-padding:15px;
-border-radius:8px;
-text-align:center;
+
+border-radius:5px;
+
+overflow:hidden;
+
 }
+
+.skill-fill{
+
+height:8px;
+
+background:#38bdf8;
+
+}
+
+/* PROJECTS */
 
 .projects{
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+
+gap:25px;
+
 }
 
-.project{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-transition:0.3s;
-}
+.project-title{
 
-.project:hover{
-transform:translateY(-5px);
-background:#273549;
-}
-
-.project h3{
 color:#38bdf8;
+
 margin-bottom:10px;
+
 }
 
-.project p{
-font-size:14px;
+/* PIPELINE */
+
+.pipeline{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+
 }
 
-.exp{
-margin-bottom:20px;
+.pipe{
+
 background:#1e293b;
-padding:20px;
-border-radius:10px;
+
+padding:15px 25px;
+
+border-radius:8px;
+
+font-size:14px;
+
 }
+
+/* FOOTER */
 
 footer{
+
 text-align:center;
-padding:30px;
-margin-top:40px;
+
+padding:40px;
+
+border-top:1px solid #1e293b;
+
 color:#94a3b8;
-font-size:14px;
-border-top:1px solid #334155;
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<!-- HERO -->
 
-<header>
+<section class="hero">
 
-<h1>RAJENDRA KUMAR MARANDI</h1>
+<h1>Rajendra Kumar Marandi</h1>
 
-<h2>Software Engineer | DevOps & Cloud Engineer</h2>
+<p>Senior Software Engineer | DevOps | Kubernetes | AWS | Terraform | CI/CD</p>
 
-<div class="contact">
-📞 +91-7033262744 |
-✉ rajendraakmr@gmail.com |
-<a href="https://github.com/rajendrakmr">GitHub</a> |
-<a href="https://linkedin.com/in/rajendraakmr">LinkedIn</a>
+<div class="hero-buttons">
+
+<a class="btn" href="https://github.com/rajendrakmr">GitHub</a>
+
+<a class="btn" href="https://linkedin.com/in/rajendraakmr">LinkedIn</a>
+
+<a class="btn" href="mailto:rajendraakmr@gmail.com">Contact</a>
+
 </div>
 
-</header>
+</section>
 
-<section>
+<!-- ABOUT -->
+
+<section class="section">
 
 <h2 class="section-title">About Me</h2>
 
-<div class="about">
+<div class="card">
 
 <p>
 
-Software Engineer with <b>6.4+ years of experience</b> designing and operating
-cloud-native infrastructure on <b>AWS</b>. Experienced managing
-<b>large Kubernetes clusters (30+ nodes supporting 40+ microservices)</b>
-with GitOps-based CI/CD pipelines enabling zero-downtime deployments.
+DevOps Engineer with <b>6+ years experience</b> designing scalable cloud infrastructure and automating CI/CD pipelines.
 
-</p>
+Managed **30+ node Kubernetes clusters supporting 40+ microservices** with GitOps workflows using ArgoCD.
 
-<br>
+Expert in **AWS, Kubernetes, Terraform, Docker, Jenkins, GitHub Actions and observability tools**.
 
-<p>
-
-Strong expertise in <b>Docker, Kubernetes (EKS), Terraform, ArgoCD,
-GitHub Actions, Jenkins</b> and automation tools such as
-<b>Ansible, Bash, Python</b>. Experienced in implementing
-NGINX Ingress, cert-manager and Let's Encrypt for secure production workloads.
+Focused on building reliable, automated and secure infrastructure.
 
 </p>
 
@@ -183,131 +278,173 @@ NGINX Ingress, cert-manager and Let's Encrypt for secure production workloads.
 
 </section>
 
-<section>
+<!-- SKILLS -->
+
+<section class="section">
 
 <h2 class="section-title">Technical Skills</h2>
 
 <div class="skills">
 
-<div class="skill">AWS (EC2, EKS, S3, IAM, VPC)</div>
-<div class="skill">Kubernetes</div>
-<div class="skill">Docker</div>
-<div class="skill">Terraform</div>
-<div class="skill">ArgoCD</div>
-<div class="skill">GitHub Actions</div>
-<div class="skill">Jenkins</div>
-<div class="skill">Ansible</div>
-<div class="skill">Prometheus</div>
-<div class="skill">Grafana</div>
-<div class="skill">Node.js</div>
-<div class="skill">React</div>
-<div class="skill">Python</div>
-<div class="skill">Bash</div>
+<div class="card">
+
+AWS
+
+<div class="skill-bar">
+
+<div class="skill-fill" style="width:90%"></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+Kubernetes
+
+<div class="skill-bar">
+
+<div class="skill-fill" style="width:90%"></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+Terraform
+
+<div class="skill-bar">
+
+<div class="skill-fill" style="width:85%"></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+Docker
+
+<div class="skill-bar">
+
+<div class="skill-fill" style="width:90%"></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+CI/CD
+
+<div class="skill-bar">
+
+<div class="skill-fill" style="width:88%"></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+Monitoring (Prometheus + Grafana)
+
+<div class="skill-bar">
+
+<div class="skill-fill" style="width:80%"></div>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section>
+<!-- PIPELINE -->
 
-<h2 class="section-title">Professional Experience</h2>
+<section class="section">
 
-<div class="exp">
+<h2 class="section-title">Typical DevOps Pipeline</h2>
 
-<h3>Software Engineer — Datacore Systems</h3>
+<div class="pipeline">
 
-<p>July 2022 – Present | Kolkata, India</p>
+<div class="pipe">Developer Push</div>
 
-<p>
-Managing large-scale Kubernetes infrastructure and DevOps automation
-for production microservices workloads.
-</p>
+<div class="pipe">GitHub Actions CI</div>
 
-</div>
+<div class="pipe">Docker Build</div>
 
-<div class="exp">
+<div class="pipe">Push to Registry</div>
 
-<h3>Backend Engineer — Pollysys Global Solutions</h3>
+<div class="pipe">Update GitOps Repo</div>
 
-<p>Dec 2020 – July 2021 | Nov 2021 – June 2022</p>
+<div class="pipe">ArgoCD Sync</div>
 
-</div>
-
-<div class="exp">
-
-<h3>Software Developer — Bookingjini Labs</h3>
-
-<p>Aug 2021 – Oct 2021</p>
-
-</div>
-
-<div class="exp">
-
-<h3>Associate Developer — Hachiweb</h3>
-
-<p>Jan 2020 – Dec 2020</p>
+<div class="pipe">Kubernetes Deploy</div>
 
 </div>
 
 </section>
 
-<section>
+<!-- PROJECTS -->
 
-<h2 class="section-title">Key Projects</h2>
+<section class="section">
+
+<h2 class="section-title">Featured Projects</h2>
 
 <div class="projects">
 
-<div class="project">
+<div class="card">
 
-<h3>DevOps Monitoring & AWS Cost Analysis API</h3>
+<h3 class="project-title">DevOps Monitoring Platform</h3>
 
 <p>
 
-Built FastAPI-based monitoring and AWS cost analysis tool using
-<b>boto3, psutil and Docker</b>. Automated infrastructure monitoring,
-log classification and cost reporting improving visibility by 60%.
+FastAPI based infrastructure monitoring and AWS cost analysis platform.
+
+Automates server health checks, log analysis and AWS resource cost reporting.
 
 </p>
 
 </div>
 
-<div class="project">
+<div class="card">
 
-<h3>Two-Tier Banking Application Deployment</h3>
+<h3 class="project-title">Kubernetes Banking Platform</h3>
 
 <p>
 
-Containerized Spring Boot application and deployed on
-<b>AWS EKS</b> with monitoring via <b>Prometheus and Grafana</b>.
-Improved scalability and reduced incident response time.
+Containerized banking application deployed on AWS EKS with auto scaling and observability.
+
+Monitoring implemented using Prometheus and Grafana.
 
 </p>
 
 </div>
 
-<div class="project">
+<div class="card">
 
-<h3>SaaS School Management System</h3>
+<h3 class="project-title">Multi-Tenant SaaS ERP</h3>
 
 <p>
 
-Multi-tenant SaaS ERP deployed on <b>AWS EKS</b> using
-<b>Docker, Kubernetes, ArgoCD and GitOps CI/CD pipelines</b>.
-Implemented RBAC and tenant isolation with automated monitoring.
+School management SaaS platform deployed on Kubernetes with GitOps CI/CD using ArgoCD.
+
+Implemented tenant isolation and automated deployment pipelines.
 
 </p>
 
 </div>
 
-<div class="project">
+<div class="card">
 
-<h3>E-Commerce Platform Deployment</h3>
+<h3 class="project-title">Cloud Native E-Commerce Platform</h3>
 
 <p>
 
-3-tier containerized architecture deployed on <b>AWS EKS</b>
-using <b>Terraform, Jenkins and ArgoCD</b>.
-Automated CI/CD reduced deployment time by 60%.
+3-tier microservices architecture deployed using Terraform, Docker, Kubernetes and Jenkins CI/CD pipelines.
 
 </p>
 
@@ -317,17 +454,33 @@ Automated CI/CD reduced deployment time by 60%.
 
 </section>
 
-<section>
+<!-- EXPERIENCE -->
 
-<h2 class="section-title">Education</h2>
+<section class="section">
 
-<div class="about">
+<h2 class="section-title">Experience</h2>
 
-<p>
-Bachelor of Computer Applications (BCA) – Computer Science<br>
-Sri Dev Suman University, Uttarakhand<br>
-2017 – 2020
-</p>
+<div class="card">
+
+<h3>Software Engineer — Datacore Systems</h3>
+
+<p>July 2022 – Present</p>
+
+</div>
+
+<div class="card">
+
+<h3>Backend Engineer — Pollysys Global Solutions</h3>
+
+<p>2020 – 2022</p>
+
+</div>
+
+<div class="card">
+
+<h3>Software Developer — Bookingjini Labs</h3>
+
+<p>2021</p>
 
 </div>
 
@@ -335,11 +488,11 @@ Sri Dev Suman University, Uttarakhand<br>
 
 <footer>
 
-© 2026 Rajendra Kumar Marandi | DevOps & Cloud Engineer Portfolio
+© 2025-2026 Rajendra Kumar Marandi  
+DevOps & Cloud Engineer Portfolio
 
 </footer>
 
-</div>
-
 </body>
+
 </html>
