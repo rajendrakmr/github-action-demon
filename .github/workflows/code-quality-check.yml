@@ -18,7 +18,7 @@ jobs:
             - name: setup python ${{ matrix.python-version }}
               uses: actions/setup-python@v5
               with:
-                python-verion: ${{ matrix.python-version }}
+                python-version: ${{ matrix.python-version }}
                 cache: pip
 
             - name: install dependencies
