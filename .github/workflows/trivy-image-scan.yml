@@ -22,4 +22,4 @@ jobs:
                 exit-code: '1'
                 severity: 'CRITICAL'
                 gnore-unfixed: true
-                trivyignores: ${{ github.workspace }}/.trivyignore
+                trivyignores: .trivyignore
