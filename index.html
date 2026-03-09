@@ -6,7 +6,7 @@
 
 <title>Rajendra Kumar Marandi | DevOps Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,21 +14,53 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins;
+font-family:'Inter',sans-serif;
 }
 
 body{
+
 background:#0f172a;
 color:white;
+overflow-x:hidden;
+
 }
 
-/* HERO */
+/* animated background */
+
+body::before{
+
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:linear-gradient(45deg,#2563eb,#06b6d4,#9333ea);
+animation:bgmove 12s infinite linear;
+opacity:.08;
+z-index:-1;
+
+}
+
+@keyframes bgmove{
+
+0%{transform:translate(0,0)}
+50%{transform:translate(-25%,-25%)}
+100%{transform:translate(0,0)}
+
+}
+
+/* hero */
 
 .hero{
 
-background:linear-gradient(120deg,#1e3a8a,#2563eb,#06b6d4);
+height:90vh;
 
-padding:120px 20px;
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
 
 text-align:center;
 
@@ -36,9 +68,14 @@ text-align:center;
 
 .hero h1{
 
-font-size:50px;
-
+font-size:56px;
 font-weight:700;
+
+}
+
+.hero span{
+
+color:#38bdf8;
 
 }
 
@@ -48,33 +85,33 @@ margin-top:15px;
 
 font-size:18px;
 
-opacity:.9;
+color:#94a3b8;
 
 }
 
-.hero-buttons{
+/* buttons */
 
-margin-top:25px;
+.buttons{
+
+margin-top:30px;
 
 }
 
 .btn{
 
-background:white;
+padding:12px 22px;
 
-color:#1e3a8a;
-
-padding:10px 18px;
+background:#38bdf8;
 
 border-radius:8px;
 
-margin:5px;
+margin:8px;
 
 display:inline-block;
 
 text-decoration:none;
 
-font-weight:500;
+color:white;
 
 transition:.3s;
 
@@ -82,11 +119,13 @@ transition:.3s;
 
 .btn:hover{
 
-transform:scale(1.05);
+transform:translateY(-4px);
+
+box-shadow:0 10px 25px rgba(56,189,248,.4);
 
 }
 
-/* SECTION */
+/* sections */
 
 .section{
 
@@ -94,11 +133,11 @@ max-width:1100px;
 
 margin:auto;
 
-padding:70px 20px;
+padding:80px 20px;
 
 }
 
-.section-title{
+.section h2{
 
 font-size:32px;
 
@@ -108,19 +147,17 @@ color:#38bdf8;
 
 }
 
-/* GLASS CARD */
+/* glass cards */
 
 .card{
 
 background:rgba(255,255,255,0.05);
 
-backdrop-filter:blur(10px);
-
 border-radius:15px;
 
 padding:25px;
 
-margin-bottom:20px;
+backdrop-filter:blur(8px);
 
 transition:.3s;
 
@@ -128,13 +165,13 @@ transition:.3s;
 
 .card:hover{
 
-transform:translateY(-6px);
+transform:translateY(-8px);
 
-background:rgba(255,255,255,0.08);
+box-shadow:0 20px 40px rgba(0,0,0,.4);
 
 }
 
-/* SKILLS */
+/* skills */
 
 .skills{
 
@@ -146,7 +183,7 @@ gap:20px;
 
 }
 
-.skill-bar{
+.skillbar{
 
 margin-top:10px;
 
@@ -154,41 +191,75 @@ height:8px;
 
 background:#1e293b;
 
-border-radius:5px;
+border-radius:4px;
 
 overflow:hidden;
 
 }
 
-.skill-fill{
+.fill{
 
 height:8px;
 
 background:#38bdf8;
 
+animation:grow 2s;
+
 }
 
-/* PROJECTS */
+@keyframes grow{
+
+from{width:0}
+
+}
+
+/* projects */
 
 .projects{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
 gap:25px;
 
 }
 
-.project-title{
+.project{
 
-color:#38bdf8;
+position:relative;
 
-margin-bottom:10px;
+overflow:hidden;
 
 }
 
-/* PIPELINE */
+.project::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(120deg,transparent,#38bdf8,transparent);
+
+transition:.6s;
+
+}
+
+.project:hover::before{
+
+left:100%;
+
+}
+
+/* pipeline */
 
 .pipeline{
 
@@ -196,25 +267,59 @@ display:flex;
 
 flex-wrap:wrap;
 
-justify-content:center;
+gap:15px;
 
-gap:20px;
+justify-content:center;
 
 }
 
-.pipe{
+.step{
+
+padding:12px 20px;
 
 background:#1e293b;
 
-padding:15px 25px;
-
 border-radius:8px;
 
-font-size:14px;
+transition:.3s;
 
 }
 
-/* FOOTER */
+.step:hover{
+
+background:#38bdf8;
+
+transform:scale(1.05);
+
+}
+
+/* floating icons */
+
+.icons{
+
+position:absolute;
+
+top:20%;
+
+left:10%;
+
+opacity:.2;
+
+font-size:40px;
+
+animation:float 6s infinite ease-in-out;
+
+}
+
+@keyframes float{
+
+0%,100%{transform:translateY(0)}
+
+50%{transform:translateY(-20px)}
+
+}
+
+/* footer */
 
 footer{
 
@@ -222,9 +327,9 @@ text-align:center;
 
 padding:40px;
 
-border-top:1px solid #1e293b;
-
 color:#94a3b8;
+
+border-top:1px solid #1e293b;
 
 }
 
@@ -234,15 +339,17 @@ color:#94a3b8;
 
 <body>
 
+<div class="icons">⚙️</div>
+
 <!-- HERO -->
 
 <section class="hero">
 
-<h1>Rajendra Kumar Marandi</h1>
+<h1>Rajendra Kumar <span>Marandi</span></h1>
 
-<p>Senior Software Engineer | DevOps | Kubernetes | AWS | Terraform | CI/CD</p>
+<p>DevOps Engineer | Kubernetes | AWS | Terraform | CI/CD</p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
 <a class="btn" href="https://github.com/rajendrakmr">GitHub</a>
 
@@ -258,21 +365,15 @@ color:#94a3b8;
 
 <section class="section">
 
-<h2 class="section-title">About Me</h2>
+<h2>About Me</h2>
 
 <div class="card">
 
-<p>
+DevOps Engineer with **6+ years experience** designing cloud infrastructure and automation.
 
-DevOps Engineer with <b>6+ years experience</b> designing scalable cloud infrastructure and automating CI/CD pipelines.
+Managed **30+ node Kubernetes clusters supporting 40+ microservices**.
 
-Managed **30+ node Kubernetes clusters supporting 40+ microservices** with GitOps workflows using ArgoCD.
-
-Expert in **AWS, Kubernetes, Terraform, Docker, Jenkins, GitHub Actions and observability tools**.
-
-Focused on building reliable, automated and secure infrastructure.
-
-</p>
+Expert in **AWS, Kubernetes, Docker, Terraform, ArgoCD, Jenkins, GitHub Actions** and monitoring stacks.
 
 </div>
 
@@ -282,7 +383,7 @@ Focused on building reliable, automated and secure infrastructure.
 
 <section class="section">
 
-<h2 class="section-title">Technical Skills</h2>
+<h2>Skills</h2>
 
 <div class="skills">
 
@@ -290,11 +391,7 @@ Focused on building reliable, automated and secure infrastructure.
 
 AWS
 
-<div class="skill-bar">
-
-<div class="skill-fill" style="width:90%"></div>
-
-</div>
+<div class="skillbar"><div class="fill" style="width:90%"></div></div>
 
 </div>
 
@@ -302,11 +399,7 @@ AWS
 
 Kubernetes
 
-<div class="skill-bar">
-
-<div class="skill-fill" style="width:90%"></div>
-
-</div>
+<div class="skillbar"><div class="fill" style="width:92%"></div></div>
 
 </div>
 
@@ -314,11 +407,7 @@ Kubernetes
 
 Terraform
 
-<div class="skill-bar">
-
-<div class="skill-fill" style="width:85%"></div>
-
-</div>
+<div class="skillbar"><div class="fill" style="width:85%"></div></div>
 
 </div>
 
@@ -326,11 +415,7 @@ Terraform
 
 Docker
 
-<div class="skill-bar">
-
-<div class="skill-fill" style="width:90%"></div>
-
-</div>
+<div class="skillbar"><div class="fill" style="width:90%"></div></div>
 
 </div>
 
@@ -338,23 +423,7 @@ Docker
 
 CI/CD
 
-<div class="skill-bar">
-
-<div class="skill-fill" style="width:88%"></div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-Monitoring (Prometheus + Grafana)
-
-<div class="skill-bar">
-
-<div class="skill-fill" style="width:80%"></div>
-
-</div>
+<div class="skillbar"><div class="fill" style="width:88%"></div></div>
 
 </div>
 
@@ -366,23 +435,23 @@ Monitoring (Prometheus + Grafana)
 
 <section class="section">
 
-<h2 class="section-title">Typical DevOps Pipeline</h2>
+<h2>DevOps Pipeline</h2>
 
 <div class="pipeline">
 
-<div class="pipe">Developer Push</div>
+<div class="step">Developer Push</div>
 
-<div class="pipe">GitHub Actions CI</div>
+<div class="step">GitHub Actions</div>
 
-<div class="pipe">Docker Build</div>
+<div class="step">Docker Build</div>
 
-<div class="pipe">Push to Registry</div>
+<div class="step">Push Registry</div>
 
-<div class="pipe">Update GitOps Repo</div>
+<div class="step">GitOps Update</div>
 
-<div class="pipe">ArgoCD Sync</div>
+<div class="step">ArgoCD Deploy</div>
 
-<div class="pipe">Kubernetes Deploy</div>
+<div class="step">Kubernetes</div>
 
 </div>
 
@@ -392,95 +461,41 @@ Monitoring (Prometheus + Grafana)
 
 <section class="section">
 
-<h2 class="section-title">Featured Projects</h2>
+<h2>Projects</h2>
 
 <div class="projects">
 
-<div class="card">
+<div class="card project">
 
-<h3 class="project-title">DevOps Monitoring Platform</h3>
+<h3>DevOps Monitoring Platform</h3>
 
-<p>
-
-FastAPI based infrastructure monitoring and AWS cost analysis platform.
-
-Automates server health checks, log analysis and AWS resource cost reporting.
-
-</p>
+FastAPI monitoring and AWS cost analysis tool using boto3 and psutil.
 
 </div>
 
-<div class="card">
+<div class="card project">
 
-<h3 class="project-title">Kubernetes Banking Platform</h3>
+<h3>Kubernetes Banking Platform</h3>
 
-<p>
-
-Containerized banking application deployed on AWS EKS with auto scaling and observability.
-
-Monitoring implemented using Prometheus and Grafana.
-
-</p>
+Spring Boot application deployed on AWS EKS with Prometheus monitoring.
 
 </div>
 
-<div class="card">
+<div class="card project">
 
-<h3 class="project-title">Multi-Tenant SaaS ERP</h3>
+<h3>Multi-Tenant SaaS ERP</h3>
 
-<p>
-
-School management SaaS platform deployed on Kubernetes with GitOps CI/CD using ArgoCD.
-
-Implemented tenant isolation and automated deployment pipelines.
-
-</p>
+Kubernetes hosted SaaS system with ArgoCD GitOps deployment.
 
 </div>
 
-<div class="card">
+<div class="card project">
 
-<h3 class="project-title">Cloud Native E-Commerce Platform</h3>
+<h3>Cloud Native E-Commerce</h3>
 
-<p>
-
-3-tier microservices architecture deployed using Terraform, Docker, Kubernetes and Jenkins CI/CD pipelines.
-
-</p>
+Microservices architecture deployed with Terraform and CI/CD pipelines.
 
 </div>
-
-</div>
-
-</section>
-
-<!-- EXPERIENCE -->
-
-<section class="section">
-
-<h2 class="section-title">Experience</h2>
-
-<div class="card">
-
-<h3>Software Engineer — Datacore Systems</h3>
-
-<p>July 2022 – Present</p>
-
-</div>
-
-<div class="card">
-
-<h3>Backend Engineer — Pollysys Global Solutions</h3>
-
-<p>2020 – 2022</p>
-
-</div>
-
-<div class="card">
-
-<h3>Software Developer — Bookingjini Labs</h3>
-
-<p>2021</p>
 
 </div>
 
@@ -488,8 +503,7 @@ Implemented tenant isolation and automated deployment pipelines.
 
 <footer>
 
-© 2025-2026 Rajendra Kumar Marandi  
-DevOps & Cloud Engineer Portfolio
+© 2026 Rajendra Kumar Marandi
 
 </footer>
 
