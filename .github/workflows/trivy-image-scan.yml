@@ -20,5 +20,5 @@ jobs:
                 image-ref: ${{ vars.DOCKERHUB_USER }}/github-demo:${{ github.sha }}
                 format: 'table'
                 exit-code: '1'
-                trivyignore: ${{ github.workspace }}/.trivyignore
+                trivyignores: .trivyignore
                 severity: 'CRITICAL'
