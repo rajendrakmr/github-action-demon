@@ -1,29 +1,30 @@
-name: DevSecOps End To End Pipline
+---
+name: DevSecOps End To End Pipeline
 
-on: 
-    push:
-        branches: [ dev ]
+on:
+  push:
+    branches: [dev]
 
 jobs:
-    code-quality:
-        uses: ./.github/workflows/code-quality-check.yml
-    
-    secrets-scan:
-        uses:  ./.github/workflows/secrets-scan.yml
-    
-    dependency-scan:
-        uses: ./.github/workflows/dependency-scan.yml
+  code-quality:
+    uses: ./.github/workflows/code-quality-check.yml
 
-    docker-file-scan:
-        uses: ./.github/workflows/docker-scan.yml
+  secrets-scan:
+    uses: ./.github/workflows/secrets-scan.yml
 
-    docker:
-        needs: [ code-quality,secrets-scan,dependency-scan ,docker-file-scan]
-        uses: ./.github/workflows/docker-build-push.yml
-        secrets: inherit
+  dependency-scan:
+    uses: ./.github/workflows/dependency-scan.yml
 
-    # image scan
-    trivy:
-        needs: [ docker ]
-        uses: ./.github/workflows/trivy-image-scan.yml
-        secrets: inherit
+  docker-file-scan:
+    uses: ./.github/workflows/docker-scan.yml
+
+  docker:
+    needs: [code-quality,code-quality, secrets-scan, dependency-scan, docker-file-scan]
+    uses: ./.github/workflows/docker-build-push.yml
+    secrets: inherit
+
+  # Image scan
+  trivy:
+    needs: [code-quality,docker]
+    uses: ./.github/workflows/trivy-image-scan.yml
+    secrets: inherit
